@@ -560,7 +560,7 @@ static GstFlowReturn on_new_sample(GstElement *sink, CustomData *data)
         {
             if (key_frame_count == FIRST_KEY_FRAME)
             {
-                putEventMetadataTags(data, true, data->key_frame_pts);
+                putEventMetadataMKVTags(data, true, data->key_frame_pts);
             }
             kinesis_video_flags = FRAME_FLAG_KEY_FRAME;
             key_frame_count++;
@@ -1281,7 +1281,7 @@ int main(int argc, char *argv[])
                 }
                 else
                 {
-                    putEventMetadataTags(&data, false, data.file_list[i].last_fragment_ts);
+                    putEventMetadataMKVTags(&data, false, data.file_list[i].last_fragment_ts);
 
                     LOG_INFO("Finished sending file to kvs producer: " << data.file_list[i].path);
                     // check if we just finished sending the last file.
