@@ -413,7 +413,7 @@ void putEventMetadataMKVTags(CustomData *data, bool is_start_event, uint64_t eve
     std::string event_name = "VIDEO_INTERVAL_EVENT";
     std::string event_name_value = (is_start_event) ? "VIDEO_INTERVAL_START" : "VIDEO_INTERVAL_END";
 
-    std::string event_timestamp_name = "VIDEO_INTERVAL_TIMESTAMP";
+    std::string event_timestamp_name = "VIDEO_INTERVAL_EVENT_TIMESTAMP";
     std::string event_timestamp_value = std::to_string(event_timestamp);
 
     eventMetadata->names[0] = strdup(event_name.c_str());
